@@ -1,0 +1,86 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/f898dffdeb.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Addres Book</title>
+  </head>
+  <body>
+    <h1>
+      <span><i class="fas fa-address-book"></i></span> Address Book
+    </h1>
+    <div class="main">
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Address</th>
+              <th>Phone</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Luke</td>
+              <td>O'Hanlon</td>
+              <td>5 Leprechaun Lane</td>
+              <td>089-632-5938</td>
+              <td><i class="fas fa-trash-alt"></i></td>
+            </tr>
+            <tr>
+              <td>Paul</td>
+              <td>Murphy</td>
+              <td>5 Harolds Cross</td>
+              <td>083-126-2983</td>
+              <td><i class="fas fa-trash-alt"></i></td>
+            </tr>
+            <tr>
+              <td>Sara</td>
+              <td>Bastile</td>
+              <td>95 Penny Dr</td>
+              <td>054-342-6466</td>
+              <td><i class="fas fa-trash-alt"></i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal">
+        <div class="modal-form">
+          <div class="modal-head">
+            <span><i class="fas fa-user-edit fa-5x"></i></span>
+          </div>
+          <div id="new-contact">
+            <div class="form-group">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="address">Address</label>
+              <input type="text" rows="4" cols="30" id="address" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="text" id="phone" class="form-control" />
+            </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+body {
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+  color: #2e2e2e;
+}
+
+.table {
+  border-collapse: collapse;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  margin: auto;
+  font-weight: 100;
+  font-size: 0.9em;
+  width: 90%;
+  min-width: 500px;
+  text-align: left;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+}
+
+.table thead tr {
+  background-color: #2e2e2e;
+  color: #fff;
+}
+
+.table thead th {
+  font-weight: 300;
+}
+
+.table th,
+.table td {
+  padding: 15px;
+}
+
+.table tbody tr {
+  border-bottom: solid 1px #cccc;
+}
+.table tbody tr:last-of-type {
+  border-bottom: solid 2px #2e2e2e;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.modal {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-form {
+  width: 600px;
+  height: 400px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.modal-head {
+  background-color: #2e2e2e;
+  padding: 5px;
+}
+
+.fa-user-edit {
+  color: #fff;
+}
+
+.form-group label{
+    padding: 5px;
+    display: block;
+}
+
+

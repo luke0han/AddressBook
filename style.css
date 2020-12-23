@@ -11,8 +11,8 @@ body {
   margin: auto;
   font-weight: 100;
   font-size: 0.9em;
-  width: 90%;
-  min-width: 500px;
+  width: 100%;
+  min-width: 340px;
   text-align: left;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
 }
@@ -48,7 +48,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -64,16 +64,32 @@ body {
 
 .modal-head {
   background-color: #2e2e2e;
-  padding: 5px;
+  padding: 0.5px;
+  color: #fff;
 }
 
 .fa-user-edit {
   color: #fff;
 }
 
-.form-group label{
-    padding: 5px;
-    display: block;
+.form-group label {
+  padding: 5px;
+  display: block;
 }
 
+button{
+  color: #fff;
+  background-color: #2e2e2e;
+  border-radius: 5px;
+  padding: 10px 24px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
 
+.modal-button {
+  color: #fff;
+  background-color: #2e2e2e;
+  border-radius: 5px;
+  padding: 10px 24px;
+  margin-top: 10px;
+}

@@ -1,50 +1,12 @@
-// (function(){
-// //Add New Contact
-// const contacts = {
-//     contacts: [],
-//     init: function() {
-//         this.cacheDom()
-//         this.bindEvents()
-//         this.render()
-//     },
-//     cacheDom: function(){
-//         this.$modal = $('.modal')
-//         this.$table = $('.table')
-//         this.$btn = $('.modal-btn')
-//         this.$first = $('#first-name')
-//         this.$last = $('#last-name')
-//         this.$phone = $('#phone')
-//         this.$address = $('#address')
-//         this.$tr = this.$table.find('tr')
-//         this.template = this.$table.find('#contact-template').html()
-//     },
-//     bindEvents: function() {
-//         this.$btn.on('click', this.addContact.bind(this))
-//     },
-//     render: function() {
-//         const newContact = {
-//             contacts: this.contacts,
-//         }
-//         this.$tr.html(this.template, newContact)
-//     },
-//     addContact: function(){
-//         this.contacts.push(this.$first.val(), this.$last.val(), this.$phone.val(), this.$address.val())
-//         // const $row = $('<tr>')
+// Open Add New Contact Modal Form
+$('#add-btn')
+.on('click', () => $('.modal')
+.css('display', 'flex'))
 
-//         // $row.html = `
-//         // <td>${table.first}</td>
-//         // <td>${table.last}</td>
-//         // <td>${table.phone}</td>
-//         // <td>${table.address}</td>
-//         // <td><i class="fas fa-trash-alt delete"></i></td>
-//         // `
-//         // $('.table').append($row)
-//         this.render()
-//     } 
-// };
-
-// contacts.init()
-// })()
+//Close Add New Contact Modal Form
+$('#close')
+.on('click', (i) => $('.modal')
+.css('display', 'none'))
 
 // Contact Class
 class Contact {
@@ -69,14 +31,25 @@ class UserEvents {
         const $table = $('.table')
         const $row = $('<tr>')
 
-        $row.html = `
+        $row.html( `
         <td>${contact.first}</td>
         <td>${contact.last}</td>
         <td>${contact.phone}</td>
         <td>${contact.address}</td>
         <td><i class="fas fa-trash-alt delete"></i></td>
-        `
+        `)
         $table.append($row)
+    }
+
+    static clearForm() {
+        $('#first-name').val('')
+        $('#last-name').val('')
+        $('#phone').val('')
+        $('#address').val('')
+    }
+
+    static deleteContact(e){
+        e.closest('tr').remove()
     }
 }
 
@@ -88,28 +61,27 @@ $(document).ready(UserEvents.displayContacts)
 $('.modal-button').on('click', (e) => {
     // prevent submit default
     e.preventDefault();
-    console.log('hi')
     // store input values in variables
-    const first = $('#first-name').val()
-    const last = $('#last-name').val()
-    const phone = $('#phone').val()
-    const address = $('#address').val()
-    // create new contact
-    const contact =  new Contact(first, last, phone, address)
-    console.log(contact)
+    const $first = $('#first-name').val()
+    const $last = $('#last-name').val()
+    const $phone = $('#phone').val()
+    const $address = $('#address').val()
+
+    if($first === '' || $last === '' || $phone === '' || $address === '') {
+     alert('Please Fill In All Fields!')
+    } else{
+         const $contact =  new Contact($first, $last, $phone, $address)
+      UserEvents.addNewContact($contact)
+      // Hide modal
+      $('.modal').css('display', 'none')
+      // Clear form
+      UserEvents.clearForm()
+    }
 })
 
 // Remove Contact
+$('.table').on('click', (e) => {
+    UserEvents.deleteContact(e.target)
+})
 
 
-//const template = $('#contact-template').html()
-
-// Open Add New Contact Modal Form
-$('#add-btn')
-.on('click', () => $('.modal')
-.css('display', 'flex'))
-
-//Close Add New Contact Modal Form
-$('#close')
-.on('click', (i) => $('.modal')
-.css('display', 'none'))

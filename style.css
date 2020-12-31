@@ -177,3 +177,48 @@ button{
   overflow: scroll;
   z-index: 1;
 }
+
+#alert{
+  display: none;
+  padding: 20px 40px;
+  width: 260px;
+  min-width: 260px;
+  position: absolute;
+  right: 0px;
+  top: 10px;
+  border-radius: 5px;
+  
+}
+#alert.delMsg{
+  background-color: #ffdb9b;
+  border-left: 10px solid #ffa502;
+}
+
+#alert.addCont{
+  background-color: #bdfa9a;
+  border-left: 10px solid #2de907;
+}
+
+.iconDel{
+  display: none;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  color: #ffa502;
+}
+
+.iconAdd{
+  display: none;
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  color: #2de907;
+}
+
+#alert .message{
+  padding: 0px 30px;
+}

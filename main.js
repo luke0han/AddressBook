@@ -66,19 +66,37 @@ $(".modal-button").on("click", (e) => {
     $(".modal").css("display", "none");
     // Clear Form
     UserEvents.clearForm()
+    $('#alert').removeClass().addClass('addCont')
+    .css('display', 'flex')
+    $('.iconAdd').css('display', 'flex')
+    $('.message').text('Contact Added!')
+    setTimeout(() => {
+        $('#alert').css('display', 'none')
+        
+    }, 2000)
+    $('.iconAdd').css('display', 'none')
   }
 })
 
 // Delete Contact
 $(".table").on("click", ".delete", (e) => {
-  console.log("hi!");
-  e.target.closest("tr").remove()
+    e.target.closest("tr").remove()
+
+    $('#alert').removeClass().addClass('delMsg')
+    .css('display', 'flex')
+    $('.iconDel').css('display', 'flex')
+    $('.message').text('Contact Deleted!')
+    setTimeout(() => {
+        $('#alert').css('display', 'none')
+        
+    }, 2000)
+    $('.iconDel').css('display', 'none')
 })
 
-// Open Add New Contact Modal Form
+// Open Add New Contact Form
 $("#add-btn").on("click", () => $(".modal").css("display", "flex"));
 
-//Close Add New Contact Modal Form
+//Close Add New Contact Form
 $("#close").on("click", (i) => {
   $(".modal").css("display", "none");
   UserEvents.clearForm()
@@ -118,6 +136,7 @@ $(".theme-btn").on("click", () => {
     colorBG = "#ECE2C6";
     $(".table tbody tr").removeClass().addClass("desert");
   }
+
   $("body").css("color", `${colorTheme}`);
   $("body").css("background-color", `${colorBG}`);
   $("button").css("background-color", `${colorTheme}`);
@@ -130,10 +149,12 @@ $(".theme-btn").on("click", () => {
 // Search Contacts
 $(".search").on("keyup", (e) => {
   const searchVal = e.target.value.toLowerCase().replace(/\s*/g, "");
+  
   $(".info").each((i, td) => {
     const $siblings = $(td).siblings().text().toLowerCase();
     const $current = $(td).text().toLowerCase();
     let str = $siblings + $current;
+
     if (str.indexOf(searchVal) !== -1) {
       $(td).closest("tr").show();
     } else {

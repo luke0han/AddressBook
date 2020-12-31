@@ -6,11 +6,26 @@ html,body {
     overflow-x: hidden; 
 }
 
-
 body {
   font-family: "Oswald", sans-serif;
   text-align: center;
   color: #2e2e2e;
+}
+
+body tr:nth-child(odd).default{
+  background-color: #fff;
+}
+body tr:nth-child(odd).dark{
+  background-color: #fff;
+}
+body tr:nth-child(odd).ocean{
+  background-color: #acecfa;
+}
+body tr:nth-child(odd).forest{
+  background-color: #e3e9be;
+}
+body tr:nth-child(odd).desert{
+  background-color: #EFCDBB;
 }
 
 .table {
@@ -65,13 +80,14 @@ body {
 }
 
 .modal-form {
+  width: 80%;
   min-width: 330px;
-  width: 98%;
   height: 400px;
   max-height: 100%;
   background-color: #fff;
   border-radius: 10px;
   overflow: scroll;
+  z-index: 1;
 }
 
 .modal-head {
@@ -118,3 +134,46 @@ button{
   cursor: pointer;
 }
 
+.search-bar{
+  position: relative;
+  min-width: 200px;
+  padding: 10px 20px 20px 0
+}
+
+.search{
+  position: relative;
+  padding: 5px 0 5px 0;
+  text-align: center;
+  min-width: 200px;
+}
+
+.search-icon{
+  position:relative;
+  top: 2px;
+  left: 25px;
+  z-index: 1;
+}
+
+.modal-theme {
+  position: absolute;
+  top: 0;
+  min-width: 330px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.theme-form {
+  width: 80%;
+  min-width: 330px;
+  height: 400px;
+  max-height: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: scroll;
+  z-index: 1;
+}

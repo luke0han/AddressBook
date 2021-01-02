@@ -12,6 +12,7 @@ body {
   color: #2e2e2e;
 }
 
+/********* THEME ROWS ***********/
 body tr:nth-child(odd).default{
   background-color: #fff;
 }
@@ -28,6 +29,40 @@ body tr:nth-child(odd).desert{
   background-color: #EFCDBB;
 }
 
+/********* HEADER ***********/
+h1{
+  display: inline-block;
+  padding-top: 10px;
+}
+.title{
+  color: rgb(247, 247, 247);
+  text-shadow: 2px 2px 2px#2e2e2e;
+}
+
+img{
+  display: none;
+  vertical-align: middle;
+  margin-bottom: 20px;
+  max-height: 70px;
+}
+
+.defaultV{
+  display: inline-block;
+}
+.darkV{
+  display: none;
+} 
+.oceanV{
+  display: none;
+} 
+.forestV {
+  display: none;
+}
+.desertV{
+  display: none;
+}
+
+/********* TABLE ***********/
 .table {
   border-collapse: collapse;
   border-radius: 10px 10px 0 0;
@@ -66,6 +101,11 @@ body tr:nth-child(odd).desert{
   background-color: #f2f2f2;
 }
 
+.delete{
+  cursor: pointer;
+}
+
+/********* ADD CONTACT FORM ***********/
 .modal {
   position: absolute;
   top: 0;
@@ -80,9 +120,11 @@ body tr:nth-child(odd).desert{
 }
 
 .modal-form {
-  width: 80%;
+  display: block;
+  width:auto;
   min-width: 330px;
-  height: 400px;
+  height: auto;
+  padding-bottom: 15px;
   max-height: 100%;
   background-color: #fff;
   border-radius: 10px;
@@ -121,10 +163,8 @@ button{
   padding: 10px 24px;
   margin-top: 10px;
   cursor: pointer;
-}
-
-.delete{
-  cursor: pointer;
+  margin-left: 25vw;
+  margin-right: 25vw;
 }
 
 .close{
@@ -134,26 +174,7 @@ button{
   cursor: pointer;
 }
 
-.search-bar{
-  position: relative;
-  min-width: 200px;
-  padding: 10px 20px 20px 0
-}
-
-.search{
-  position: relative;
-  padding: 5px 0 5px 0;
-  text-align: center;
-  min-width: 200px;
-}
-
-.search-icon{
-  position:relative;
-  top: 2px;
-  left: 25px;
-  z-index: 1;
-}
-
+/********* THEME FORM ***********/
 .modal-theme {
   position: absolute;
   top: 0;
@@ -178,47 +199,199 @@ button{
   z-index: 1;
 }
 
-#alert{
-  display: none;
-  padding: 20px 40px;
-  width: 260px;
-  min-width: 260px;
+.theme-options{
+ display: inline-block;
+ margin-bottom: 17px;
+}
+
+/********* SEARCH BAR ***********/
+.search-bar{
+  position: relative;
+  min-width: 200px;
+  padding: 10px 20px 20px 0
+}
+
+.search{
+  position: relative;
+  padding: 5px 0 5px 0;
+  text-align: center;
+  min-width: 200px;
+}
+
+.search-icon{
+  position:relative;
+  top: 2px;
+  left: 25px;
+  z-index: 1;
+}
+
+/********* ALERTS ***********/
+
+/* Delete Alert */
+.delAlert{
   position: absolute;
-  right: 0px;
-  top: 10px;
+  overflow: hidden;
+  width: 0;
+  right: -15px;
+  top: 30px;
+  background-color: #ffaea8;
   border-radius: 5px;
-  
-}
-#alert.delMsg{
-  background-color: #ffdb9b;
-  border-left: 10px solid #ffa502;
 }
 
-#alert.addCont{
+.delAlertMsg{
+  width: 200px;
+  padding:  20px 10px;
+  color: #a80b00;
+}
+
+.del-icon{
+  position: absolute;
+  padding: 20px 10px;
+  font-size: 1.5em;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a80b00;
+}
+
+.borderDel{
+  display: inline;
+  top:0;
+  float: left;
+  width:15px;
+  background-color:  #ff1b0a;
+  height: 30px;
+  margin: 0;
+  padding-bottom: 35px;
+}
+
+/* Add Alert */
+.addAlert{
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  right: -15px;
+  top: 30px;
   background-color: #bdfa9a;
-  border-left: 10px solid #2de907;
+  border-radius: 5px;
 }
 
-.iconDel{
-  display: none;
+.addAlertMsg{
+  width: 200px;
+  padding:  20px 10px;
+  color: #1eb101;
+}
+
+.add-icon{
   position: absolute;
+  padding: 20px 10px;
+  font-size: 1.5em;
   left: 20px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 2em;
-  color: #ffa502;
+  color: #1eb101;
 }
 
-.iconAdd{
-  display: none;
+.borderAdd{
+  display: inline;
+  top:0;
+  float: left;
+  width:15px;
+  background-color:  #2de907;
+  height: 30px;
+  margin: 0;
+  padding-bottom: 35px;
+}
+
+/* Warning Alert */
+.warnAlert{
   position: absolute;
+  overflow: hidden;
+  width: 0;
+  right: -15px;
+  top: 30px;
+  background-color: #ffdb9b;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.warnAlertMsg{
+  width: 250px;
+  padding:  20px 10px;
+  color: #cc8707;
+}
+
+.warn-icon{
+  position: absolute;
+  padding: 20px 10px;
+  font-size: 1.5em;
   left: 20px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 2em;
-  color: #2de907;
+  color: #da8e03;
 }
 
-#alert .message{
-  padding: 0px 30px;
+.borderWarn{
+  display: inline;
+  top:0;
+  float: left;
+  width:15px;
+  background-color:  #ffaf19;
+  height: 30px;
+  margin: 0;
+  padding-bottom: 35px;
+}
+
+.phoneAlert{
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  right: -15px;
+  top: 30px;
+  background-color: #ffdb9b;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+.nameAlert{
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  right: -15px;
+  top: 30px;
+  background-color: #ffdb9b;
+  border-radius: 5px;
+  z-index:2;
+}
+
+.addressAlert{
+  position: absolute;
+  overflow: hidden;
+  width: 0;
+  right: -15px;
+  top: 30px;
+  background-color: #ffdb9b;
+  border-radius: 5px;
+  z-index: 2;
+}
+
+
+.form-control1{
+  margin: 10px;
+  padding: 5px;
+}
+
+
+@media (max-width: 1200px) {
+  .address {
+    display: inline-grid;
+    grid-template-columns: auto; 
+    
+  }
+}
+@media (min-width: 450px) {
+  .address {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+  }
 }

@@ -17,17 +17,41 @@
       src="https://kit.fontawesome.com/f898dffdeb.js"
       crossorigin="anonymous"
     ></script>
-    <title>Addres Book</title>
+    <title>Social Vault</title>
   </head>
   <body>
-    <div class="alert" id="alert">
-      <!-- <span class="fa fa-exclamation-circle iconDel"></span> -->
-      <span class="fa fa-check-circle iconAdd"></span>
-      <span class="message"></span>
+    <div class="header">
+      <img src="img/defVault.png" class="defaultV" alt="Default Vault Logo">
+      <img src="img/darkVault.png" class="darkV" alt="Dark Vault Logo">
+      <img src="img/oceanVault.png" class="oceanV" alt="Ocean Vault Logo">
+      <img src="img/forVault.png" class="forestV" alt="Forest Vault Logo">
+      <img src="img/desVault.png" class="desertV" alt="Desert Vault Logo">
+      <h1>Social <span class="title">Vault</span></h1>
     </div>
-    <h1>
-      <span><i class="fas fa-address-book"></i></span> Address Book
-    </h1>
+    <div class="addAlert">
+      <span class="borderAdd"></span>
+      <div class="addAlertMsg"><span class="fa fa-check-circle add-icon"></span>Contact Added!</div>
+    </div>
+    <div class="delAlert">
+      <span class="borderDel"></span>
+      <div class="delAlertMsg"><span class="fa fa-times-circle del-icon"></span>Contact Deleted!</div>
+    </div>
+    <div class="warnAlert">
+      <span class="borderWarn"></span>
+      <div class="warnAlertMsg"></span><span class="fa fa-exclamation-circle warn-icon"></span>Please fill in all fields!</div>
+    </div>
+    <div class="phoneAlert">
+      <span class="borderWarn"></span>
+      <div class="warnAlertMsg"></span><span class="fa fa-exclamation-circle warn-icon"></span>Enter a valid phone number!</div>
+    </div>
+    <div class="nameAlert">
+      <span class="borderWarn"></span>
+      <div class="warnAlertMsg"></span><span class="fa fa-exclamation-circle warn-icon"></span>Please enter a valid name!</div>
+    </div>
+    <div class="addressAlert">
+      <span class="borderWarn"></span>
+      <div class="warnAlertMsg"></span><span class="fa fa-exclamation-circle warn-icon"></span>Enter a valid address!</div>
+    </div>
     <button class="theme">Change Theme</button>
     <button id="add-btn">Add New Contact</button>
     <div class="search-bar">
@@ -45,28 +69,7 @@
             <th></th>
           </tr>
         </thead>
-        <tbody>
-          <tr class="contact-info">
-            <td class="info">Luke</td>
-            <td class="info">O'Hanlon</td>
-            <td class="info">089-632-5938</td>
-            <td class="info">5 Leprechaun Lane Dublin R142X2 Ireland</td>
-            <td><i class="fas fa-trash-alt delete"></i></td>
-          </tr>
-          <tr  class="contact-info">
-            <td class="info">Paul</td>
-            <td class="info">Murphy</td>
-            <td class="info">083-126-2983</td>
-            <td class="info">5 Harolds Cross Portlaoise Co. Laois R32VE6 Ireland</td>
-            <td><i class="fas fa-trash-alt delete"></i></td>
-          </tr>
-          <tr  class="contact-info">
-            <td class="info">Sara</td>
-            <td class="info">Bastile</td>
-            <td class="info">054-342-6466</td>
-            <td class="info">1514 Hannington dr Katy Tx 77450 USA</td>
-            <td><i class="fas fa-trash-alt delete"></i></td>
-          </tr>
+        <tbody>      
         </tbody>
       </table>
     </div>
@@ -89,17 +92,36 @@
           </div>
           <div class="form-group">
             <label for="phone">Phone Number</label>
-            <input type="text" id="phone" class="form-control" />
+            <input type="tel" id="phone" class="form-control" />
           </div>
           <div class="form-group">
             <label for="address">Address</label>
-            <textarea
-              type="text"
-              rows="4"
-              cols="30"
-              id="address"
-              class="form-control"
-            ></textarea>
+           <div class="address"> 
+              <input type="street" 
+                class="form-control1 add1 first" 
+                id="autocomplete" 
+                placeholder="Address Line 1">   
+              <input type="add2" 
+                class="form-control1 add2" 
+                id="inputadd2" 
+                placeholder="Address Line 2">  
+              <input type="city" 
+                class="form-control1 city" 
+                id="inputState" 
+                placeholder="City">
+              <input type="county" 
+                class="form-control1 county state" 
+                id="inputCounty" 
+                placeholder="County/State">
+              <input type="zip" 
+                class="form-control1 zip" 
+                id="inputZip" 
+                placeholder="Zip">
+              <input type="country" 
+                class="form-control1 country last" 
+                id="inputCountry" 
+                placeholder="Country">
+           </div>
           </div>
           <div class="form-group">
             <input class="modal-button" type="submit" />
@@ -116,17 +138,17 @@
           </h2>
         </div>
         <div class="modal-body">
-          <p>Select a color the suits you:</p>
+          <p>Select a theme that suits you:</p>
           <input type="radio" id="default" name="theme" value="default" />
-          <label for="default">Default</label><br />
+          <label for="default" class="theme-options">Default</label><br />
           <input type="radio" id="dark" name="theme" value="dark" />
-          <label for="dark">Dark</label><br />
+          <label for="dark" class="theme-options">Dark</label><br />
           <input type="radio" id="ocean" name="theme" value="ocean" />
-          <label for="ocean">Ocean</label><br />
+          <label for="ocean" class="theme-options">Ocean</label><br />
           <input type="radio" id="forest" name="theme" value="forest" />
-          <label for="forest">Forest</label> <br />
+          <label for="forest" class="theme-options">Forest</label> <br />
           <input type="radio" id="desert" name="theme" value="desert" />
-          <label for="desert">Desert</label> <br />
+          <label for="desert" class="theme-options">Desert</label> <br />
         </div>
         <button class="theme-btn">Save</button>
       </div>
